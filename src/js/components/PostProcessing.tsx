@@ -33,8 +33,8 @@ export default function EffectsComponent() {
           /*<Bloom mipmapBlur luminanceThreshold={luminanceThreshold} intensity={intensity}/>*/
         }
 
-        {<EffekseerRender/>}
-        {/* <N8AO renderMode={4} /> */}
+        {/* {<EffekseerRender/>} */}
+        <N8AO renderMode={4} />
 
 
       </EffectComposer>

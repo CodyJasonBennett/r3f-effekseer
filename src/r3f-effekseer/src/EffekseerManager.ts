@@ -258,6 +258,19 @@ export class EffekseerManager {
     // we need to update the React context states whenever a new effect
     // gets loaded, that's why save a reference to the setter here
     this.#setEffects!(this.effects);
+
+    this.gl!.autoClear = false
+
+    this.scene!.onBeforeRender = () => {
+      this.context!.setProjectionMatrix(this.camera!.projectionMatrix.elements as unknown as Float32Array);
+      this.context!.setCameraMatrix(this.camera!.matrixWorldInverse.elements as unknown as Float32Array);
+      this.context!.draw();
+
+      if (this.fastRenderMode) {
+        this.gl!.resetState();
+      }
+    }
+
     this.initialized = true;
   }
 
