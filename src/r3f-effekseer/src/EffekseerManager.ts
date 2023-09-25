@@ -281,16 +281,6 @@ export class EffekseerManager {
     if (this.context) {
       this.context.update(dt * 60.0);
       this.updateEffects(dt);
-
-      if (render) {
-        this.context.setProjectionMatrix(this.camera!.projectionMatrix.elements as unknown as Float32Array);
-        this.context.setCameraMatrix(this.camera!.matrixWorldInverse.elements as unknown as Float32Array);
-        this.context.draw();
-
-        if (this.fastRenderMode) {
-          this.gl!.resetState();
-        }
-      }
     }
   }
 

@@ -21,6 +21,8 @@ export class EffekseerRenderPass extends Pass {
     this.context.setProjectionMatrix(this.camera.projectionMatrix.elements as unknown as Float32Array);
     this.context.setCameraMatrix(this.camera.matrixWorldInverse.elements as unknown as Float32Array);
     this.context.draw();
+
+    renderer.resetState();
   }
 }
 

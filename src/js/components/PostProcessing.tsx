@@ -1,4 +1,4 @@
-import {Bloom, EffectComposer} from "@react-three/postprocessing";
+import {Bloom, EffectComposer, N8AO} from "@react-three/postprocessing";
 import {folder, useControls} from "leva";
 import {EffekseerRender} from "../../EffekseerRenderPass";
 
@@ -34,6 +34,7 @@ export default function EffectsComponent() {
         }
 
         {<EffekseerRender/>}
+        {/* <N8AO renderMode={4} /> */}
 
 
       </EffectComposer>

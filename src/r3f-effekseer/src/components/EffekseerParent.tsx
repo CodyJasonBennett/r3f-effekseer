@@ -38,13 +38,8 @@ export const Effekseer = forwardRef(({children, settings, ejectRenderer}: {
 
 
   useFrame((state, delta) => {
-    // connecting the simulation to r3f's render loop,
-    // it will now get updated every frame
-    if (!ejectRenderer) {
-      gl.render(scene, camera);
-    }
-    effekseerManager.update(delta, !ejectRenderer);
-  }, ejectRenderer ? undefined : 1);
+    effekseerManager.update(delta, false);
+  });
 
 
   return (
